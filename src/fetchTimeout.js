@@ -10,7 +10,7 @@ function fetchTimeout (fetchPromise, timeout) {
   // 这是一个可以被 reject 的 Promise
   var abortPromise = new Promise(function (resolve, reject) {
     abortFn = function () {
-      reject('abort promise')
+      reject(new Error('abort promise'))
     }
   })
   // 有一个 Promise 完成就立刻结束
