@@ -4,7 +4,8 @@
   "description": "使用 rollup 打包 JavaScript SDK 的示例",
   "main": "src/main.js",
   "scripts": {
-    "build": "rollup -c",
+    "build:dev": "rollup -c build/rollup.config.js --environment NODE_ENV:development",
+    "build:prod": "rollup -c build/rollup.config.js --environment NODE_ENV:production",
     "lint": "eslint --fix src"
   },
   "keywords": [
