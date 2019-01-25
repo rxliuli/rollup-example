@@ -1,3 +1,5 @@
+import babel from 'rollup-plugin-babel'
+
 export default {
   // 入口文件
   input: 'src/main.js',
@@ -8,5 +10,11 @@ export default {
     file: 'dist/bundle.js',
     // 打包的格式，umd 支持 commonjs/amd/life 三种方式
     format: 'umd'
-  }
+  },
+  plugins: [
+    // 引入 babel 插件
+    babel({
+      exclude: 'node_modules/**'
+    })
+  ]
 }
