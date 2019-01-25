@@ -5,7 +5,7 @@ import fetchTimeout from './fetchTimeout'
  * 限制并发请求数量的 fetch 封装
  */
 class FetchLimiting {
-  constructor({ timeout = 10000, limit = 10 }) {
+  constructor ({ timeout = 10000, limit = 10 }) {
     this.timeout = timeout
     this.limit = limit
     this.execCount = 0
@@ -21,7 +21,7 @@ class FetchLimiting {
    * @param {RequestInit} init 请求的其他可选项
    * @returns {Promise} 如果超时就提前返回 reject, 否则正常返回 fetch 结果
    */
-  async _fetch(url, init) {
+  async _fetch (url, init) {
     const _innerFetch = async () => {
       console.log(
         `执行 execCount: ${this.execCount}, waitArr length: ${
